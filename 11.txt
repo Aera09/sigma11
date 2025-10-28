@@ -1,0 +1,17 @@
+!pip install diffusers
+!pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+!pip install transformers
+!pip install accelerate
+!pip install pillow
+!pip install safetensors
+
+from diffusers import StableDiffusionPipeline
+import torch
+
+model = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4").to("cuda")
+
+
+prompt = "cinematic war seen"
+image = model(prompt).images[0]
+image.show()
+
