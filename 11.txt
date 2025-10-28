@@ -1,3 +1,5 @@
+#11.	Use a pre-trained model like Stable Diffusion to generate images based on various textual descriptions (text-to-image).	
+
 !pip install diffusers
 !pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 !pip install transformers
@@ -14,4 +16,5 @@ model = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
 prompt = "cinematic war seen"
 image = model(prompt).images[0]
 image.show()
+
 
